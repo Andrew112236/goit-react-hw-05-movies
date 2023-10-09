@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { MovieLink, MovieList, Title } from './Home.module.css';
+import { MovieLink, MovieList, Title } from '../Home/Home.styled';
 import { getTrending } from '../../API_links/Api';
-import { Loader } from 'react-loader-spinner';
+import Loader from '../../components/Loader/Loader';
 import { useLocation } from 'react-router-dom';
 
 function Home() {

@@ -5,7 +5,7 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
 // API function for searching movies
 
-async function searchMovies(query) {
+export async function searchMovies(query) {
   try {
     const API_URL = `search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
     const response = await axios.get(API_URL);
@@ -18,7 +18,7 @@ async function searchMovies(query) {
 
 // API function for movie details
 
-async function getMovieDetails(id) {
+export async function getMovieDetails(id) {
   try {
     const API_URL = `movie/${id}?api_key=${API_KEY}&language=en-US`;
     const response = await axios.get(API_URL);
@@ -31,7 +31,7 @@ async function getMovieDetails(id) {
 
 // API function for movie trendings
 
-async function getTrending() {
+export async function getTrending() {
   try {
     const API_URL = `trending/movie/day?api_key=${API_KEY}`;
     const response = await axios.get(API_URL);
@@ -44,7 +44,7 @@ async function getTrending() {
 
 // API function for movie reviews
 
-async function getReviews(id) {
+export async function getReviews(id) {
   try {
     const API_URL = `movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
     const response = await axios.get(API_URL);
@@ -57,7 +57,7 @@ async function getReviews(id) {
 
 // API function for movie credits
 
-async function getMovieCredits(id) {
+export async function getMovieCredits(id) {
   try {
     const API_URL = `movie/${id}/credits?api_key=${API_KEY}&language=en-US`;
     const response = await axios.get(API_URL);
@@ -67,9 +67,3 @@ async function getMovieCredits(id) {
     throw error;
   }
 }
-
-module.exports = searchMovies;
-module.exports = getMovieDetails;
-module.exports = getTrending;
-module.exports = getReviews;
-module.exports = getMovieCredits;

@@ -1,11 +1,11 @@
-import { Loader } from '../../components/Loader/Loader';
+import Loader from '../../components/Loader/Loader';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
   Container,
   Header,
   Link,
-} from '../SharedLayout/SharedLayout.module.css';
+} from '../../components/SharedLayout/SharedLayout.styled';
 export const SharedLayout = () => {
   return (
     <Container>

@@ -9,7 +9,7 @@ import {
   MovieBox,
   MovieInfo,
   Title,
-} from './MovieDetails.module.css';
+} from '../../Pages/MovieDetails/MovieDetails.styled';
 
 function MovieDetails() {
   const { movieIdParam } = useParams();
@@ -46,7 +46,7 @@ function MovieDetails() {
           <Title>{original_title}</Title>
           <h3>User score: {scoreToFixed}%</h3>
           <h3>Overview</h3>
-          <p>{overview}</p>
+          <p>{overview}nu ma vezi Silviu</p>
           <h3>Genres</h3>
           <GenresList>
             {genres &&
