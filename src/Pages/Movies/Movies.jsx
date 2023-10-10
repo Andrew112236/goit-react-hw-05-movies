@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from '../../API_links/Api';
 import Loader from '../../components/Loader/Loader';
 import { MovieList, MovieLink } from '../../Pages/Home/Home.styled';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
 
 function Movies() {
   const [searchParams] = useSearchParams();
