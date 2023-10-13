@@ -1,38 +1,42 @@
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { getMovieCredits } from '../../API_links/Api';
-import { CastList, CastItem, Name, Character } from './Cast.styled';
+import { CastList, Character } from './Cast.styled';
+import { AiFillAmazonSquare } from 'react-icons/ai';
 
-const Cast = () => {
-  const [credits, setCredits] = useState([]);
+function Cast() {
   const { movieIdParam } = useParams();
+  const [castData, setCastData] = useState(null);
+
   useEffect(() => {
-    getMovieCredits(movieIdParam).then(data => setCredits(data.credits));
+    getMovieCredits(movieIdParam).then(({ cast }) => {
+      setCastData(cast);
+    });
   }, [movieIdParam]);
 
   return (
-    <CastList>
-      {credits.length > 0
-        ? credits.map(({ id, name, profile_path, character }) => (
-            <CastItem key={id}>
+    <div>
+      {castData.length > 0 ? (
+        castData.map(({ id, profile_path, character, name }) => (
+          <CastList key={id}>
+            {profile_path ? (
               <img
-                src={
-                  profile_path
-                    ? `https://image.tmdb.org/t/p/w200${profile_path}`
-                    : `http://www.suryalaya.org/images/no_image.jpg`
-                }
-                alt="actor"
-                loading="lazy"
-                width={120}
-                height={180}
+                src={`https://image.tmdb.org/t/p/w200${profile_path}`}
+                alt={name}
               />
-              <Name>{name}</Name>
-              <Character> Character: {character}</Character>
-            </CastItem>
-          ))
-        : "Sorry, there isn't any info :("}
-    </CastList>
+            ) : (
+              <AiFillAmazonSquare size={200} />
+            )}
+
+            <Character>{name}</Character>
+            <Character>Character : {character.substr(0, 9)}</Character>
+          </CastList>
+        ))
+      ) : (
+        <p> Sorry, there are no information!</p>
+      )}
+    </div>
   );
-};
+}
 
 export default Cast;

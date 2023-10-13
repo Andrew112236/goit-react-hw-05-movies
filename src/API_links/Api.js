@@ -18,13 +18,26 @@ export async function searchMovies(query) {
 
 // API function for movie details
 
-export async function getMovieDetails(id) {
+export async function getMovieDetails(movieIdParam) {
   try {
-    const API_URL = `movie/${id}?api_key=${API_KEY}&language=en-US`;
+    const API_URL = `movie/${movieIdParam}?api_key=${API_KEY}&language=en-US`;
     const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
     console.error('There is a error in search movies details of', error);
+    throw error;
+  }
+}
+
+// API function for movie credits
+
+export async function getMovieCredits(movieIdParam) {
+  try {
+    const API_URL = `movie/${movieIdParam}/credits?api_key=${API_KEY}&language=en-US`;
+    const response = await axios.get(API_URL);
+    return response.data;
+  } catch (error) {
+    console.error('There is a error in searching credits of', error);
     throw error;
   }
 }
@@ -44,26 +57,13 @@ export async function getTrending() {
 
 // API function for movie reviews
 
-export async function getReviews(id) {
+export async function getReviews(movieIdParam) {
   try {
-    const API_URL = `movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
+    const API_URL = `movie/${movieIdParam}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
     const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
     console.error('There is a error in searching reviews of', error);
-    throw error;
-  }
-}
-
-// API function for movie credits
-
-export async function getMovieCredits(id) {
-  try {
-    const API_URL = `movie/${id}/credits?api_key=${API_KEY}&language=en-US`;
-    const response = await axios.get(API_URL);
-    return response.data;
-  } catch (error) {
-    console.error('There is a error in searching credits of', error);
     throw error;
   }
 }
