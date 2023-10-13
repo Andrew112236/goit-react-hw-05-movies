@@ -63,7 +63,7 @@ export async function getMovieCredits(id) {
     const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
-    console.error('There is a error in searching reviews of', error);
+    console.error('There is a error in searching credits of', error);
     throw error;
   }
 }
