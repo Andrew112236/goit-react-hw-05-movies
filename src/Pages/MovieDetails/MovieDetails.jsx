@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useParams, Link } from 'react-router-dom';
+import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
 import { getMovieDetails } from '../../API_links/Api';
 import {
   Button,
@@ -59,23 +59,18 @@ function MovieDetails() {
         <h4>Additional information</h4>
         <ul>
           <li>
-            <Link
-              to={`/movie/${movieIdParam}/credits`}
-              state={{ ...location.state }}
-            >
+            <Link to="cast" state={{ ...location.state }}>
               Cast
             </Link>
           </li>
           <li>
-            <Link
-              to={`/movie/${movieIdParam}/reviews`}
-              state={{ ...location.state }}
-            >
+            <Link to="reviews" state={{ ...location.state }}>
               Reviews
             </Link>
           </li>
         </ul>
       </InfoBox>
+      <Outlet />
     </main>
   );
 }

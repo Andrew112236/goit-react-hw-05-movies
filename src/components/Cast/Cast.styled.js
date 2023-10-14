@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const CastContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 export const CastList = styled.ul`
   list-style: none;
 `;

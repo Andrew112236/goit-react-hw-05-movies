@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from '../../API_links/Api';
-import { CastList, Character } from './Cast.styled';
+import { CastContainer, CastList, Character } from './Cast.styled';
 import { AiFillAmazonSquare } from 'react-icons/ai';
 
 function Cast() {
   const { movieIdParam } = useParams();
-  const [castData, setCastData] = useState(null);
+  const [castData, setCastData] = useState('');
 
   useEffect(() => {
     getMovieCredits(movieIdParam).then(({ cast }) => {
@@ -15,9 +15,9 @@ function Cast() {
   }, [movieIdParam]);
 
   return (
-    <div>
-      {castData.length > 0 ? (
-        castData.map(({ id, profile_path, character, name }) => (
+    <CastContainer>
+      {castData?.length > 0 ? (
+        castData?.map(({ id, profile_path, character, name }) => (
           <CastList key={id}>
             {profile_path ? (
               <img
@@ -35,7 +35,7 @@ function Cast() {
       ) : (
         <p> Sorry, there are no information!</p>
       )}
-    </div>
+    </CastContainer>
   );
 }
 
