@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CastContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  max-width: 1200px;
 `;
 export const CastList = styled.ul`
   list-style: none;

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
+import { useLocation, useParams, Outlet } from 'react-router-dom';
 import { getMovieDetails } from '../../API_links/Api';
 import {
   Button,
   GenresList,
   InfoBox,
+  LinkAtribute,
   LinkBack,
   MovieBox,
   MovieInfo,
+  StyledLink,
   Title,
 } from '../../Pages/MovieDetails/MovieDetails.styled';
 
@@ -37,7 +39,7 @@ function MovieDetails() {
               ? `https://image.tmdb.org/t/p/w300${poster_path}`
               : `http://www.suryalaya.org/images/no_image.jpg`
           }
-          width={320}
+          width={300}
           height={380}
           loading="lazy"
           alt="poster"
@@ -58,16 +60,16 @@ function MovieDetails() {
       <InfoBox>
         <h4>Additional information</h4>
         <ul>
-          <li>
-            <Link to="cast" state={{ ...location.state }}>
+          <LinkAtribute>
+            <StyledLink to="cast" state={{ ...location.state }}>
               Cast
-            </Link>
-          </li>
-          <li>
-            <Link to="reviews" state={{ ...location.state }}>
+            </StyledLink>
+          </LinkAtribute>
+          <LinkAtribute>
+            <StyledLink to="reviews" state={{ ...location.state }}>
               Reviews
-            </Link>
-          </li>
+            </StyledLink>
+          </LinkAtribute>
         </ul>
       </InfoBox>
       <Outlet />

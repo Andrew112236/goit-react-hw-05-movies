@@ -2,7 +2,6 @@ import { ButtonIcon, SearchBox } from '../Styles/Element.styled';
 import { BsSearchHeart } from 'react-icons/bs';
 import SearchForm from './SearchForm';
 import SearchInput from './SearchInput.jsx';
-import PropTypes from 'prop-types';
 
 export const SearchBar = ({ onSubmit }) => (
   <SearchBox>
@@ -14,6 +13,3 @@ export const SearchBar = ({ onSubmit }) => (
     </SearchForm>
   </SearchBox>
 );
-SearchBar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};

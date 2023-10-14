@@ -7,7 +7,8 @@ export const Title = styled.h2`
 export const MovieBox = styled.div`
   display: flex;
   padding: 30px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px white;
+  max-width: 1200px;
 `;
 export const MovieInfo = styled.div`
   padding: 20px 40px;
@@ -28,6 +29,27 @@ export const MovieLink = styled.li`
   text-decoration: none;
 `;
 
+export const LinkAtribute = styled.li`
+  list-style: none;
+  display: flex;
+  padding: 0;
+  text-decoration: none;
+`;
+
+export const StyledLink = styled(Link)`
+  list-style: none;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    border-radius: 15px;
+    background-color: #004b69;
+    color: white;
+    font-weight: bold;
+  }
+`;
+
 export const Button = styled.button`
   margin-top: 16px;
   padding: 8px 16px;
@@ -38,7 +60,7 @@ export const Button = styled.button`
   &:hover {
     background-color: #63c5da;
   }
-  background-color: rgb(31, 133, 255);
+  background-color: #004b69;
 `;
 
 export const LinkBack = styled(Link)`
@@ -52,6 +74,7 @@ export const LinkBack = styled(Link)`
 `;
 export const InfoBox = styled.div`
   padding: 20px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px white;
+  max-width: 1200px;
   text-decoration: none;
 `;

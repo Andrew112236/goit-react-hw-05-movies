@@ -4,6 +4,7 @@ import { searchMovies } from '../../API_links/Api';
 import Loader from '../../components/Loader/Loader';
 import { MovieList, MovieLink } from '../../Pages/Home/Home.styled';
 import { SearchBar } from '../../components/SearchBar/SearchBar';
+import { Container } from 'components/SharedLayout/SharedLayout.styled';
 
 function Movies() {
   const [searchParams] = useSearchParams();
@@ -41,7 +42,7 @@ function Movies() {
   }, [movieName]);
 
   return (
-    <div>
+    <Container>
       <SearchBar />
       {isLoading ? (
         <Loader />
@@ -56,7 +57,7 @@ function Movies() {
           ))}
         </MovieList>
       )}
-    </div>
+    </Container>
   );
 }
 

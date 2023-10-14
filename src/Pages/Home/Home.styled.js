@@ -6,13 +6,11 @@ export const MovieLink = styled(Link)`
   padding: 5px 8px;
 
   &:visited {
-    color: blue;
+    color: white;
   }
-
   &:hover {
     border-radius: 15px;
-    box-shadow: 1px 2px 4px 3px rgba(231, 233, 255, 5);
-    background-color: rgb(31, 133, 255);
+    background-color: #004b69;
     color: white;
     font-weight: bold;
   }
@@ -31,4 +29,5 @@ export const MovieList = styled.ul`
 export const Title = styled.h2`
   margin-top: 20px;
   margin-bottom: 0;
+  font-size: 30px;
 `;

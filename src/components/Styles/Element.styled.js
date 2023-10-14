@@ -7,7 +7,7 @@ const Form = styled.form`
   align-items: center;
   width: 100%;
   height: 30px;
-  max-width: 800px;
+  max-width: 1000px;
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
@@ -55,8 +55,6 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 500;
   min-width: 180px;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 
   cursor: pointer;
   transition: background-color 250ms linear;
@@ -65,4 +63,11 @@ const Button = styled.button`
   }
 `;
 
-export { SearchBox, Form, ButtonIcon, Input, Button };
+const ReviewContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  list-style: none;
+`;
+
+export { SearchBox, Form, ButtonIcon, Input, Button, ReviewContainer };
