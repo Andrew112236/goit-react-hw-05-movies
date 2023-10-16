@@ -51,7 +51,7 @@ function Movies() {
       ) : (
         <MovieList>
           {moviesList.map(movie => (
-            <MovieLink key={movie.id} to={`/movie/${movie.id}`}>
+            <MovieLink key={movie.id} to={`/movies/${movie.id}`}>
               {movie.title}
             </MovieLink>
           ))}

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const MovieLink = styled(Link)`
   text-decoration: none;
   padding: 5px 8px;
+  color: white;
 
   &:visited {
     color: white;
@@ -24,6 +25,7 @@ export const MovieList = styled.ul`
   list-style-type: lower-numerical;
   list-style-color:
   text-decoration: none;
+  color: white;
 `;
 
 export const Title = styled.h2`
